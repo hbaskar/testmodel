@@ -4,6 +4,10 @@ module.exports = function(app) {
  
     
     // Retrieve all Customer
-   app.get('/api/customers', customers.findAll);
-   
-   }
+app.get('/api/customers', customers.findAll);
+
+app.get('/api/customer/:id?', customers.findUser);
+
+app.post('/api/customer', customers.insertUser);
+
+}
