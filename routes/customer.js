@@ -10,4 +10,4 @@ app.get('/api/customer/:id?', customers.findUser);
 
 app.post('/api/customer', customers.insertUser);
 
-}
+};
