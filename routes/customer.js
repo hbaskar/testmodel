@@ -13,7 +13,7 @@ app.post('/api/customer', customers.createUser);
 app.put('/api/customer/:id?', customers.updateUser);
  
     // Delete a Customer with Id
-//app.delete('/api/customers/:customerId', customers.delete);
+app.delete('/api/customer/:id', customers.deleteUser);
 
 
 };
