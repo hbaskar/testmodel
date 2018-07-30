@@ -51,13 +51,8 @@ exports.insertUser = (req, res)=> {
         email:req.body.email,
         password:req.body.password
     })
-.then(newUser => Customer.findOrCreate({where: {id:newUser.id }}))
-    
-        .spread((user, created) => {
-          console.log(user.get({
-            plain: true
-          })) ;
-          console.log(created);
+.then(user => {
+    console.log(JSON.stringify(user)) ;
           res.render('index', { customer:user.firstname, customers:user });
         });
     };
