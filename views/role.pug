@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  if role
+    p Welcome to #{role}
+ 
+    ul
+    if roles.length
+  
+     
+       each val in roles
+        li= val.roleid +' '+ val.rolename
+  
+       else
+        li There are no values
+    else
+       li=roles.rolename

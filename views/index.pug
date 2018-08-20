@@ -8,10 +8,12 @@ block content
     ul
     if customers.length
   
-     
+     ul
        each val in customers
-        li= val.id +' '+ val.email + ' '+val.lastname
-  
+        li= val.userid +' '+ val.email + ' '+val.lastname
+        ul
+          each val1 in val.appl_roles
+            li= val1.roleid +' '+ val1.rolename
        else
         li There are no values
     else

@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 require('./routes/customer.js')(app);
+require('./routes/role.js')(app);
 app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 

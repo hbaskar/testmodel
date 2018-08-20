@@ -1,0 +1,2 @@
+sequelize-auto -o "./models" -d test -h localhost -u appuser -p 3306 -x appuser -e mysql -t appl_roles
+sequelize-auto -o "./models" -d test -h localhost -u appuser -p 3306 -x appuser -e mysql -t appl_user_roles

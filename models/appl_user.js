@@ -1,8 +1,8 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-    return sequelize.define('appl_user', {
-      id: {
+    var appl_user = sequelize.define('appl_user', {
+      userid: {
         type: DataTypes.INTEGER(11),
         allowNull: false,
         primaryKey: true,
@@ -49,8 +49,15 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.DATE,
         allowNull: true
       }
-    }, {
+    }, 
+    {
       tableName: 'appl_users'
     });
+
+    appl_user.associate = function (models) {
+      
+      appl_user.belongsToMany(models.appl_role, { through: models.appl_user_role,foreignKey: 'userid' });
+    }; 
+    return appl_user;
   };
   
